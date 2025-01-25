@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inspiring Wisdom</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="quote-container">
+        <div class="quote-background"></div>
+        <div class="navigation-arrows">
+            <div class="navigation-arrow prev-arrow" id="prev-quote">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M15 18l-6-6 6-6"/>
+                </svg>
+            </div>
+            <div class="navigation-arrow next-arrow" id="next-quote">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M9 18l6-6-6-6"/>
+                </svg>
+            </div>
+        </div>
+        <div class="quote-content">
+            <p class="quote-text" id="quote-text"></p>
+            <p class="quote-author" id="quote-author"></p>
+        </div>
+        <div class="search-container">
+            <input type="text" id="search-input" placeholder="Search quotes...">
+            <button id="reset-search">×</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
