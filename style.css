@@ -1,13 +1,13 @@
 :root {
-    --bg-color-deep: #121218;
-    --bg-color-light: #1a1a22;
-    --text-primary: #e0e0f0;
-    --text-secondary: #8a8a9c;
-    --accent-primary: #5a5a7a;
-    --accent-secondary: #2ad4b3;
-    --accent-glow: rgba(42, 212, 179, 0.15);
-    --border-color: rgba(42, 212, 179, 0.2);
-    --transition-speed: 0.25s;
+    --bg-color-deep: #0a0a0f; /* Deep midnight background */
+    --bg-color-light: #111117; /* Slightly lighter for containers */
+    --text-primary: #e0e0f0; /* Light text for contrast */
+    --text-secondary: #8a8a9c; /* Subtle secondary text */
+    --accent-primary: #3a3a4a; /* Muted accent color */
+    --accent-secondary: #2ad4b3; /* Bright accent for highlights */
+    --accent-glow: rgba(42, 212, 179, 0.1); /* Subtle glow effect */
+    --border-color: rgba(42, 212, 179, 0.15); /* Border color with accent */
+    --transition-speed: 0.3s; /* Smooth transitions */
 }
 
 * {
@@ -36,15 +36,13 @@ body {
     width: 100%;
     max-width: 700px;
     background: var(--bg-color-light);
-    border-radius: 12px;
-    padding: 2.5rem;
+    border-radius: 8px; /* Slightly smaller radius for a flatter look */
+    padding: 2rem;
     box-shadow: 
-        0 12px 40px rgba(0, 0, 0, 0.25),
-        inset 0 0 20px var(--accent-glow);
+        0 4px 16px rgba(0, 0, 0, 0.2); /* Flatter shadow */
     border: 1px solid var(--border-color);
     position: relative;
     overflow: hidden;
-    backdrop-filter: blur(10px);
 }
 
 .navigation-arrows {
@@ -59,29 +57,28 @@ body {
 }
 
 .navigation-arrow {
-    width: 44px;
-    height: 44px;
+    width: 40px;
+    height: 40px;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: transparent;
-    border-radius: 8px;
     cursor: pointer;
     transition: all var(--transition-speed) ease;
-    opacity: 0.6;
+    opacity: 0.8;
+    border: none; /* Remove the border */
 }
 
 .navigation-arrow:hover {
     opacity: 1;
-    background-color: var(--accent-glow);
-    transform: scale(1.05);
+    background-color: transparent; /* No background on hover */
 }
 
 .navigation-arrow svg {
-    width: 28px;
-    height: 28px;
+    width: 24px;
+    height: 24px;
     stroke: var(--accent-secondary);
-    stroke-width: 2;
+    stroke-width: 1.5; /* Thinner stroke for minimalism */
 }
 
 .quote-content {
@@ -93,8 +90,8 @@ body {
 }
 
 .quote-text {
-    font-size: 1.9rem;
-    font-weight: 200;
+    font-size: 1.8rem;
+    font-weight: 300; /* Lighter font weight */
     color: var(--text-primary);
     max-width: 90%;
     letter-spacing: 0.4px;
@@ -102,7 +99,7 @@ body {
 }
 
 .quote-author {
-    font-size: 1.1rem;
+    font-size: 1rem;
     color: var(--text-secondary);
     font-style: italic;
     opacity: 0.8;
@@ -119,9 +116,9 @@ body {
     width: 100%;
     max-width: 380px;
     padding: 0.8rem 1.2rem;
-    background-color: rgba(30, 30, 40, 0.5);
+    background-color: rgba(20, 20, 30, 0.5); /* Darker input background */
     border: 1px solid var(--border-color);
-    border-radius: 8px;
+    border-radius: 6px; /* Smaller radius for a flatter look */
     color: var(--text-primary);
     font-size: 0.95rem;
     outline: none;
@@ -130,7 +127,7 @@ body {
 
 #search-input:focus {
     border-color: var(--accent-secondary);
-    box-shadow: 0 0 15px var(--accent-glow);
+    box-shadow: 0 0 8px var(--accent-glow); /* Subtler glow */
 }
 
 #reset-search {
@@ -150,14 +147,23 @@ body {
     transform: scale(1.1);
 }
 
-@media (max-width: 768px) {
-    .quote-text {
-        font-size: 1.5rem;
-    }
-    
-    .quote-author {
-        font-size: 1rem;
-    }
+.loader {
+    border: 3px solid var(--accent-secondary); /* Thinner border */
+    border-top: 3px solid transparent;
+    border-radius: 50%;
+    width: 30px; /* Smaller loader */
+    height: 30px;
+    animation: spin 1s linear infinite;
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }
 
 @keyframes fadeIn {
@@ -176,4 +182,14 @@ body {
 
 .quote-content > * {
     animation: fadeIn 0.4s ease forwards;
+}
+
+@media (max-width: 768px) {
+    .quote-text {
+        font-size: 1.5rem;
+    }
+    
+    .quote-author {
+        font-size: 1rem;
+    }
 }

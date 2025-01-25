@@ -10,25 +10,26 @@
     <div class="quote-container">
         <div class="quote-background"></div>
         <div class="navigation-arrows">
-            <div class="navigation-arrow prev-arrow" id="prev-quote">
+            <button class="navigation-arrow prev-arrow" id="prev-quote" aria-label="Previous Quote">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <path d="M15 18l-6-6 6-6"/>
                 </svg>
-            </div>
-            <div class="navigation-arrow next-arrow" id="next-quote">
+            </button>
+            <button class="navigation-arrow next-arrow" id="next-quote" aria-label="Next Quote">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <path d="M9 18l6-6-6-6"/>
                 </svg>
-            </div>
+            </button>
         </div>
         <div class="quote-content">
-            <p class="quote-text" id="quote-text"></p>
+            <p class="quote-text" id="quote-text">Loading...</p>
             <p class="quote-author" id="quote-author"></p>
         </div>
         <div class="search-container">
-            <input type="text" id="search-input" placeholder="Search quotes...">
-            <button id="reset-search">×</button>
+            <input type="text" id="search-input" placeholder="Search quotes..." aria-label="Search quotes">
+            <button id="reset-search" aria-label="Reset search">×</button>
         </div>
+        <div class="loader" id="loader"></div>
     </div>
     <script src="script.js"></script>
 </body>
